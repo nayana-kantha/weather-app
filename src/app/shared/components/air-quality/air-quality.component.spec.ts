@@ -45,5 +45,4 @@ describe('AirQualityComponent', () => {
     const compiled = fixture.debugElement.nativeElement;
     expect(compiled.querySelector('.quality-index-lable')).toBeTruthy();
   });
-
 });
