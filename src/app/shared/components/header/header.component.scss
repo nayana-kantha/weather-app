@@ -1,0 +1,19 @@
+@import './../../../../styles/abstracts/variables';
+
+header{
+    .current-place-wrapper{
+        display: block;
+        text-align: center;
+        width: 100%;
+        .current-place{
+            margin-left: 5px;
+        }
+    }
+    .bi-list{
+        font-size: 30px;
+        margin-right: 10px;
+        background: $secondary;
+        padding: 0 7px;
+        border-radius: 50%;
+    }
+}
