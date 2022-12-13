@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { HeaderComponent } from './components/header/header.component';
 import { PlacesSearchComponent } from './components/places-search/places-search.component';
-
+import { GooglePlaceModule } from 'ngx-google-places-autocomplete';
 
 
 @NgModule({
@@ -11,7 +11,8 @@ import { PlacesSearchComponent } from './components/places-search/places-search.
     PlacesSearchComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    GooglePlaceModule
   ],
   exports: [
     HeaderComponent,
