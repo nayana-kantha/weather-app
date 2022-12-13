@@ -7,7 +7,10 @@
                 <span class="current-place"> {{currentCity}}, {{currentCountry}}</span>
             </span>
         </div>
-        <div class="col-5"></div>
+        <div class="col-5">
+            <app-places-search (selectedCity)="selectedCity($event)"
+                (selectedCountry)="selectedCountry($event)" (location)="getLocation($event)"></app-places-search>
+        </div>
         <div class="col-4">
 
         </div>

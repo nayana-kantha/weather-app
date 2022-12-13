@@ -1,1 +1,5 @@
-<p>places-search works!</p>
+<div class="place-wrapper">
+    <i class="bi bi-search"></i>
+    <input class="place-search" ngx-google-places-autocomplete (onAddressChange)="handleAddressChange($event)" />
+</div>
+
