@@ -1,7 +1,16 @@
-<app-header></app-header>
+<app-header (city)="oncityChange($event)"></app-header>
 
 <section class="container mt-4">
     <div class="row">
         <h1>Welcome to the weather channel</h1>
+    </div>
+    <div class="row">
+        <div class="col-lg-7 col-sm-12 mb-4 mt-2">
+            <ng-container *ngIf="($currentWeatherData | async)">
+                <app-current-weather [data]="($currentWeatherData | async)"></app-current-weather>
+            </ng-container>
+        </div>
+        <div class="col-lg-5 col-sm-12 mb-4 mt-2">
+        </div>
     </div>
 </section>
