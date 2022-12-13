@@ -1,18 +1,21 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { HeaderComponent } from './components/header/header.component';
+import { PlacesSearchComponent } from './components/places-search/places-search.component';
 
 
 
 @NgModule({
   declarations: [
-    HeaderComponent
+    HeaderComponent,
+    PlacesSearchComponent
   ],
   imports: [
     CommonModule
   ],
   exports: [
-    HeaderComponent
+    HeaderComponent,
+    PlacesSearchComponent
   ]
 })
 export class SharedModule { }
