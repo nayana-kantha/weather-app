@@ -16,4 +16,16 @@
             </ng-container>
         </div>
     </div>
+    <div class="row">
+        <h2>3 hour forecast</h2>
+    </div>
+    <div class="row">
+        <ng-container *ngIf="($weatherForecastData | async)?.list">
+            <ng-container *ngFor="let item of ($weatherForecastData | async)?.list;let i = index">
+                <app-weather-forecast [city]="($weatherForecastData | async)?.city" [data]="item"
+                    class="{{ i == selectedIndex ? 'col-lg-3 col-sm-12 active' :'col-lg-1 col-sm-12'}}  mb-3"
+                    [index]="i" [selectedIndex]="selectedIndex" (click)="openDetailsBox(i)"></app-weather-forecast>
+            </ng-container>
+        </ng-container>
+    </div>
 </section>

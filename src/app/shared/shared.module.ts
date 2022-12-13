@@ -7,13 +7,15 @@ import { CurrentWeatherComponent } from './components/current-weather/current-we
 import { HttpClientModule } from '@angular/common/http';
 import { AirQualityComponent } from './components/air-quality/air-quality.component';
 import { ChartModule } from 'primeng/chart';
+import { WeatherForecastComponent } from './components/weather-forecast/weather-forecast.component';
 
 @NgModule({
   declarations: [
     HeaderComponent,
     PlacesSearchComponent,
     CurrentWeatherComponent,
-    AirQualityComponent
+    AirQualityComponent,
+    WeatherForecastComponent
   ],
   imports: [
     CommonModule,
@@ -24,7 +26,8 @@ import { ChartModule } from 'primeng/chart';
     HeaderComponent,
     PlacesSearchComponent,
     CurrentWeatherComponent,
-    AirQualityComponent
+    AirQualityComponent,
+    WeatherForecastComponent
   ]
 })
 export class SharedModule { }
