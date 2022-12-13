@@ -5,22 +5,26 @@ import { PlacesSearchComponent } from './components/places-search/places-search.
 import { GooglePlaceModule } from 'ngx-google-places-autocomplete';
 import { CurrentWeatherComponent } from './components/current-weather/current-weather.component';
 import { HttpClientModule } from '@angular/common/http';
-
+import { AirQualityComponent } from './components/air-quality/air-quality.component';
+import { ChartModule } from 'primeng/chart';
 
 @NgModule({
   declarations: [
     HeaderComponent,
     PlacesSearchComponent,
-    CurrentWeatherComponent
+    CurrentWeatherComponent,
+    AirQualityComponent
   ],
   imports: [
     CommonModule,
-    GooglePlaceModule
+    GooglePlaceModule,
+    ChartModule
   ],
   exports: [
     HeaderComponent,
     PlacesSearchComponent,
-    CurrentWeatherComponent
+    CurrentWeatherComponent,
+    AirQualityComponent
   ]
 })
 export class SharedModule { }
