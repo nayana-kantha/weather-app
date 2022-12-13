@@ -1,6 +1,8 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { HeaderComponent } from 'src/app/shared/components/header/header.component';
 import { PlacesSearchComponent } from 'src/app/shared/components/places-search/places-search.component';
+import { HttpService } from 'src/app/shared/services/http.service';
+import { HttpClientTestingModule } from '@angular/common/http/testing';
 
 import { DashboardComponent } from './dashboard.component';
 
@@ -10,9 +12,11 @@ describe('DashboardComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ DashboardComponent, HeaderComponent, PlacesSearchComponent ]
+      declarations: [DashboardComponent, HeaderComponent, PlacesSearchComponent],
+      providers: [HttpService],
+      imports: [HttpClientTestingModule]
     })
-    .compileComponents();
+      .compileComponents();
   });
 
   beforeEach(() => {
