@@ -15,10 +15,10 @@
                     <label>Real Feel:</label><span class="float-end"> {{data?.main.feels_like | number: '1.0-0'}} &#8451;</span>
                 </div>
                 <div class="border-bottom pb-2 pt-2 border-light">
-                    <label>Max:</label><span class="float-end"> {{data?.main.temp_max}} km/h</span>
+                    <label>Max Temp:</label><span class="float-end"> {{data?.main.temp_max | number: '1.0-0'}} &#8451;</span>
                 </div>
                 <div class="border-bottom pb-2 pt-2 border-light">
-                    <label>Min:</label><span class="float-end"> {{data?.main.temp_min}} km/h</span>
+                    <label>Min Temp:</label><span class="float-end"> {{data?.main.temp_min | number: '1.0-0'}} &#8451;</span>
                 </div>
                 <div class="border-bottom pb-2 pt-2 border-light">
                     <label>Humidity:</label><span class="float-end"> {{data?.main.humidity}}%</span>
