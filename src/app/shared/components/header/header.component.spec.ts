@@ -1,4 +1,5 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { PlacesSearchComponent } from '../places-search/places-search.component';
 
 import { HeaderComponent } from './header.component';
 
@@ -8,7 +9,7 @@ describe('HeaderComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ HeaderComponent ]
+      declarations: [ HeaderComponent, PlacesSearchComponent ]
     })
     .compileComponents();
   });
@@ -21,5 +22,12 @@ describe('HeaderComponent', () => {
 
   it('should create', () => {
     expect(component).toBeTruthy();
+  });
+
+  it('component should render city name and country', () => {
+    const fixture = TestBed.createComponent(HeaderComponent);
+    fixture.detectChanges();
+    const compiled = fixture.debugElement.nativeElement;
+    expect(compiled.querySelector('.current-place').textContent).toContain('Colombo, Sri Lanka');
   });
 });
