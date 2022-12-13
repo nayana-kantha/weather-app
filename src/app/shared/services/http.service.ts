@@ -20,4 +20,5 @@ export class HttpService {
   getAirQualityData(location:any): Observable<any> {
     return this.httpClient.get<any>(`${environment.airPollutionUrl}?appid=${environment.appid}&lat=${location.lat}&lon=${location.lng}`);
   }
+
 }
