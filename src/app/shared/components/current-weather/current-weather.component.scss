@@ -20,4 +20,12 @@
     .more{
         color: $dark-gray;
     }
+    .img-wrapper{
+        position: relative;
+        .description{
+            position: absolute;
+            right: 110px;
+            bottom: 10px;
+        }
+    }
 }
