@@ -10,6 +10,7 @@ export class PlacesSearchComponent implements OnInit {
   @Output() selectedCity: EventEmitter<string> = new EventEmitter();
   @Output() selectedCountry: EventEmitter<string> = new EventEmitter();
   @Output() location:EventEmitter<any> = new EventEmitter();
+
   constructor() { }
 
   ngOnInit(): void {
@@ -23,5 +24,4 @@ export class PlacesSearchComponent implements OnInit {
       lng:address.geometry.location.lng()
     })
   }
-
 }
