@@ -6,11 +6,17 @@
     </div>
     <div class="row">
         <div class="col-lg-7 col-sm-12 mb-4 mt-2">
+            <ng-container *ngIf="!($currentWeatherData | async)">
+                Loading....
+            </ng-container>
             <ng-container *ngIf="($currentWeatherData | async)">
                 <app-current-weather [data]="($currentWeatherData | async)"></app-current-weather>
             </ng-container>
         </div>
         <div class="col-lg-5 col-sm-12 mb-4 mt-2">
+            <ng-container *ngIf="!($airQuality | async)">
+                Loading....
+            </ng-container>
             <ng-container *ngIf="($airQuality | async)">
                 <app-air-quality [data]="($airQuality | async)"></app-air-quality>
             </ng-container>
@@ -20,6 +26,11 @@
         <h2>3 hour forecast</h2>
     </div>
     <div class="row">
+        <ng-container *ngIf="!($weatherForecastData | async)?.list">
+            <div class="col-lg-3">
+                Loading....
+            </div>
+        </ng-container>
         <ng-container *ngIf="($weatherForecastData | async)?.list">
             <ng-container *ngFor="let item of ($weatherForecastData | async)?.list;let i = index">
                 <app-weather-forecast [city]="($weatherForecastData | async)?.city" [data]="item"
