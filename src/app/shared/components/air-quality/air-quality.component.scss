@@ -1,0 +1,50 @@
+@import './../../../../styles/abstracts/variables';
+
+.card {
+    background-color: $secondary;
+    border-radius: 1.5rem;
+    min-height: 270px;
+
+    .card-title {
+        font-size: 1.2rem;
+        text-transform: uppercase;
+    }
+
+    .card-text {
+        font-size: 3rem;
+    }
+
+    .card-description {
+        img {
+            margin-left: -5rem;
+        }
+    }
+
+    .border-bottom {
+        border-color: $light-gray !important;
+    }
+
+    .more {
+        color: $dark-gray;
+    }
+    .chart-wrapper{
+        position: relative;
+        .quality-index-lable {
+            color: $bg-color;
+            background: $tertiary;
+            border-radius: 50%;
+            width: 4rem;
+            height: 4rem;
+            text-align: center;
+            line-height: 4rem;
+            position: absolute;
+            top: 36%;
+            left: 0;
+            right: 0;
+            margin: 0 auto;
+            font-size: 2rem;
+            font-weight: 700;
+        }
+    }
+   
+}
