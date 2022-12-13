@@ -17,7 +17,6 @@ export class AirQualityComponent implements OnInit, OnChanges {
 
   ngOnChanges(changes: SimpleChanges): void {
     if (this.data) {
-      console.log('data', this.data)
       this.loadChart();
     }
   }
