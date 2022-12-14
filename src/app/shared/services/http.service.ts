@@ -2,6 +2,8 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
+import { Location } from '../models/address.model';
+import { AirQuality } from '../models/air-quality.model';
 import { CurrentWeather } from '../models/current-weather.model';
 import { WeatherData } from '../models/weather-data.model';
 
@@ -18,8 +20,8 @@ export class HttpService {
     return this.httpClient.get<CurrentWeather>(`${environment.currentWeatherUrl}?id=${environment.id}&appid=${environment.appid}&units=metric&q=${city}`);
   }
 
-  getAirQualityData(location:any): Observable<any> {
-    return this.httpClient.get<any>(`${environment.airPollutionUrl}?appid=${environment.appid}&lat=${location.lat}&lon=${location.lng}`);
+  getAirQualityData(location: Location): Observable<AirQuality> {
+    return this.httpClient.get<AirQuality>(`${environment.airPollutionUrl}?appid=${environment.appid}&lat=${location.lat}&lon=${location.lng}`);
   }
 
   getWeatherForcastData(city: string): Observable<WeatherData> {

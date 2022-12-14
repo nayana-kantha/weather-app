@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
-import { CurrentWeather } from 'src/app/shared/models/current-weather.model';
+import { Location } from 'src/app/shared/models/address.model';
+import { AirQuality } from 'src/app/shared/models/air-quality.model';
+import { CurrentWeather } from 'src/app/shared/models/current-weather.model';;
 import { WeatherData } from 'src/app/shared/models/weather-data.model';
 import { HttpService } from 'src/app/shared/services/http.service';
 
@@ -12,10 +14,10 @@ import { HttpService } from 'src/app/shared/services/http.service';
 export class DashboardComponent implements OnInit {
 
   public $currentWeatherData:Observable<CurrentWeather> = new Observable();
-  public $airQuality:Observable<any> = new Observable();
+  public $airQuality:Observable<AirQuality> = new Observable();
   public $weatherForecastData:Observable<WeatherData> = new Observable();
   defaultCity:string = 'Colombo';
-  location:any = {
+  location:Location = {
     lat:6.9270786,
     lng:79.861243
   }
@@ -35,7 +37,7 @@ export class DashboardComponent implements OnInit {
     this.$weatherForecastData = this.httpService.getWeatherForcastData(city);
   }
 
-  getLocation(location:any){
+  getLocation(location:Location){
     this.$airQuality = this.httpService.getAirQualityData(location)
   }
 

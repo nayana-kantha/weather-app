@@ -16,7 +16,9 @@ export class WeatherForecastComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
-    this.spliteDateTime();
+    if(this.data){
+      this.spliteDateTime();
+    }
   }
 
   spliteDateTime(){
