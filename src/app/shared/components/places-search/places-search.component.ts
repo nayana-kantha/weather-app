@@ -1,5 +1,5 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
-import { Location } from '../../models/address.model';
+import { Address, Location } from '../../models/address.model';
 
 @Component({
   selector: 'app-places-search',
@@ -17,8 +17,8 @@ export class PlacesSearchComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  handleAddressChange(address: any) {
-    if(address.name != ''){
+  handleAddressChange(address: Address) {
+    if(address?.name != ''){
       this.selectedCity.emit(address.name);
       this.selectedCountry.emit(address.address_components[3]?.long_name);
       this.location.emit({
@@ -28,4 +28,5 @@ export class PlacesSearchComponent implements OnInit {
     }
     
   }
+
 }

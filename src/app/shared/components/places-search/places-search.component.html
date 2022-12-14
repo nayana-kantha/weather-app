@@ -1,5 +1,8 @@
 <div class="place-wrapper">
     <i class="bi bi-search"></i>
-    <input class="place-search" ngx-google-places-autocomplete (onAddressChange)="handleAddressChange($event)" />
+    <!-- <input class="place-search" ngx-google-places-autocomplete (onAddressChange)="handleAddressChange($event)" /> -->
+    <!-- <mat-google-maps-autocomplete class="place-search" (onAutocompleteSelected)="onAutocompleteSelected($event)"
+        (onLocationSelected)="onLocationSelected($event)">
+    </mat-google-maps-autocomplete> -->
+    <input class="place-search" matInput matGoogleMapsAutocomplete (onAutocompleteSelected)="handleAddressChange($any($event))" />
 </div>
-
