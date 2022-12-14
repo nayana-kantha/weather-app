@@ -17,8 +17,8 @@ export class PlacesSearchComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  handleAddressChange(address: Address) {
-    if(address?.name != ''){
+  handleAddressChange(address: any) {
+    if(address.name != ''){
       this.selectedCity.emit(address.name);
       this.selectedCountry.emit(address.address_components[3]?.long_name);
       this.location.emit({
