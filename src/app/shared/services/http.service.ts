@@ -16,16 +16,16 @@ export class HttpService {
     private httpClient: HttpClient
   ) { }
 
-  getCurrentWeather(city: string): Observable<CurrentWeather> {
-    return this.httpClient.get<CurrentWeather>(`${environment.currentWeatherUrl}?id=${environment.id}&appid=${environment.appid}&units=metric&q=${city}`);
+  getCurrentWeather(location: Location): Observable<CurrentWeather> {
+    return this.httpClient.get<CurrentWeather>(`${environment.currentWeatherUrl}?id=${environment.id}&appid=${environment.appid}&units=metric&lat=${location.lat}&lon=${location.lng}`);
   }
 
   getAirQualityData(location: Location): Observable<AirQuality> {
     return this.httpClient.get<AirQuality>(`${environment.airPollutionUrl}?appid=${environment.appid}&lat=${location.lat}&lon=${location.lng}`);
   }
 
-  getWeatherForcastData(city: string): Observable<WeatherData> {
-    return this.httpClient.get<WeatherData>(`${environment.weatherForcastUrl}?id=${environment.id}&appid=${environment.appid}&cnt=22&units=metric&q=${city}`);
+  getWeatherForcastData(location: Location): Observable<WeatherData> {
+    return this.httpClient.get<WeatherData>(`${environment.weatherForcastUrl}?id=${environment.id}&appid=${environment.appid}&cnt=22&units=metric&lat=${location.lat}&lon=${location.lng}`);
   }
 
 }

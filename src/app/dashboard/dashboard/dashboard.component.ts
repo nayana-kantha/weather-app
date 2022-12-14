@@ -16,7 +16,6 @@ export class DashboardComponent implements OnInit {
   public $currentWeatherData:Observable<CurrentWeather> = new Observable();
   public $airQuality:Observable<AirQuality> = new Observable();
   public $weatherForecastData:Observable<WeatherData> = new Observable();
-  defaultCity:string = 'Colombo';
   location:Location = {
     lat:6.9270786,
     lng:79.861243
@@ -27,22 +26,38 @@ export class DashboardComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    this.$currentWeatherData = this.httpService.getCurrentWeather(this.defaultCity);
-    this.$airQuality = this.httpService.getAirQualityData(this.location);
-    this.$weatherForecastData = this.httpService.getWeatherForcastData(this.defaultCity);
-  }
-
-  oncityChange(city:string){
-    this.$currentWeatherData = this.httpService.getCurrentWeather(city);
-    this.$weatherForecastData = this.httpService.getWeatherForcastData(city);
+    this.getCurrentLocation();
   }
 
   getLocation(location:Location){
-    this.$airQuality = this.httpService.getAirQualityData(location)
+    this.getAllData(location);
   }
 
   openDetailsBox(index:number){
     this.selectedIndex = index;
+  }
+
+  getCurrentLocation() {
+    if (navigator.geolocation) {
+      navigator.geolocation.getCurrentPosition((position: any) => {
+        if (position) {
+          this.location.lat = position.coords.latitude;
+          this.location.lng = position.coords.longitude;
+          this.getAllData(this.location);
+        }
+      },
+        (error: any) => {
+          this.getAllData(this.location);
+        });
+    } else {
+      alert("Geolocation is not supported by this browser.");
+    }
+  }
+
+  getAllData(location:Location){
+    this.$currentWeatherData = this.httpService.getCurrentWeather(location);
+    this.$airQuality = this.httpService.getAirQualityData(location);
+    this.$weatherForecastData = this.httpService.getWeatherForcastData(location);
   }
 
 }
