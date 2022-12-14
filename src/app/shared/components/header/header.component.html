@@ -4,12 +4,11 @@
             <i class="bi bi-list"></i>
             <span class="current-place-wrapper">
                 <i class="bi bi-geo-alt-fill"></i>
-                <span class="current-place"> {{currentCity}}, {{currentCountry}}</span>
+                <span class="current-place"> {{data?.name}}, {{data?.sys?.country}}</span>
             </span>
         </div>
         <div class="col-5">
-            <app-places-search (selectedCity)="selectedCity($event)"
-                (selectedCountry)="selectedCountry($event)" (location)="getLocation($event)"></app-places-search>
+            <app-places-search (location)="getLocation($event)"></app-places-search>
         </div>
         <div class="col-4">
 

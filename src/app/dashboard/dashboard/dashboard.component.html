@@ -1,4 +1,4 @@
-<app-header (city)="oncityChange($event)" (location)="getLocation($any($event))"></app-header>
+<app-header (location)="getLocation($any($event))" [data]="($currentWeatherData | async)"></app-header>
 
 <section class="container mt-4">
     <div class="row">
