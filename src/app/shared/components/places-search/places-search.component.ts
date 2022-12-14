@@ -1,4 +1,5 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { Location } from '../../models/address.model';
 
 @Component({
   selector: 'app-places-search',
@@ -9,7 +10,7 @@ export class PlacesSearchComponent implements OnInit {
 
   @Output() selectedCity: EventEmitter<string> = new EventEmitter();
   @Output() selectedCountry: EventEmitter<string> = new EventEmitter();
-  @Output() location:EventEmitter<any> = new EventEmitter();
+  @Output() location:EventEmitter<Location> = new EventEmitter<Location>();
 
   constructor() { }
 
@@ -17,11 +18,14 @@ export class PlacesSearchComponent implements OnInit {
   }
 
   handleAddressChange(address: any) {
-    this.selectedCity.emit(address.name);
-    this.selectedCountry.emit(address.address_components[3]?.long_name);
-    this.location.emit({
-      lat:address.geometry.location.lat(),
-      lng:address.geometry.location.lng()
-    })
+    if(address.name != ''){
+      this.selectedCity.emit(address.name);
+      this.selectedCountry.emit(address.address_components[3]?.long_name);
+      this.location.emit({
+        lat:address.geometry.location.lat(),
+        lng:address.geometry.location.lng()
+      })
+    }
+    
   }
 }

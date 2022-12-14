@@ -7,8 +7,8 @@
         <div class="card-description clearfix">
             <div class="w-50 float-start img-wrapper">
                 <p class="card-text float-start w-50">{{data?.main.temp | number: '1.0-0'}} &#8451;</p>
-                <img src='https://openweathermap.org/img/wn/{{data?.weather[0]?.icon}}@4x.png' class="float-start w-50"/>
-                <div class="description">{{data?.weather[0]?.description}}</div>
+                <img src='https://openweathermap.org/img/wn/{{data?.weather[0]?.icon}}@4x.png' class="float-start w-50" alt="{{data?.weather[0]?.description}}"/>
+                <div class="description text-uppercase">{{data?.weather[0]?.description}}</div>
             </div>
             <div class="w-50 float-end more">
                 <div class="border-bottom pb-2 pt-2 border-light">

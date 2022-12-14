@@ -33,6 +33,11 @@
             "styles": [
               "src/styles/styles.scss"
             ],
+            "stylePreprocessorOptions": {
+              "includePaths": [
+                "src/styles"
+              ]
+            },
             "scripts": []
           },
           "configurations": {
@@ -101,11 +106,18 @@
             "styles": [
               "src/styles/styles.scss"
             ],
+            "stylePreprocessorOptions": {
+              "includePaths": [
+                "src/styles"
+              ]
+            },
             "scripts": []
           }
         }
       }
     }
   },
-  "defaultProject": "weather-app"
+  "cli": {
+    "analytics": "da0900f4-278d-4106-a1c6-f67ee5d3d63b"
+  }
 }
