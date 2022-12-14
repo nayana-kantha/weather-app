@@ -1,0 +1,32 @@
+@import 'abstracts/variables';
+
+.card{
+    background-color: $secondary;
+    border-radius: 1.5rem;
+    .card-title{
+        font-size: 1.2rem;
+        text-transform: uppercase;
+    }
+    .card-text{
+        font-size: 3rem;
+    }
+    .card-description{
+        img{
+            margin-left: -5rem;
+        }
+    }
+    .border-bottom{
+        border-color: $light-gray !important;
+    }
+    .more{
+        color: $dark-gray;
+    }
+    .img-wrapper{
+        position: relative;
+        .description{
+            position: absolute;
+            right: 110px;
+            bottom: 10px;
+        }
+    }
+}

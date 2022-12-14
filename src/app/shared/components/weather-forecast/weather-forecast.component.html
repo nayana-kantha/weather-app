@@ -1,0 +1,36 @@
+<div class="card {{ index == selectedIndex ? 'active' :''}}">
+    <div class="card-body">
+        <ng-container>
+            <h2 class="card-title m-0">
+                {{date | date: 'EE'}}
+                <span class="float-end" *ngIf="index == selectedIndex">{{time}}</span>
+            </h2>
+            <div class="card-description">
+                <div class="clearfix">
+                    <img src='https://openweathermap.org/img/wn/{{data?.weather[0]?.icon}}@2x.png' alt="{{data?.weather[0]?.description}}"/>
+                    <p class="card-text">{{data?.main?.temp | number: '1.0-0'}} &#8451;</p>
+                </div>
+                <div *ngIf="index == selectedIndex" class="clearfix additional-data">
+                    <div class="float-start w-100 mb-2">
+                        <div>
+                            <span class="float-end"> {{data?.weather[0]?.description}}</span>
+                        </div>
+                    </div>
+                    <div class="float-start w-50">
+                        <div>
+                            <label>Real Feel:&nbsp;&nbsp;</label><span> {{data?.main?.feels_like | number: '1.0-0'}} &#8451;</span>
+                        </div>
+                        <div>
+                            <label>Humidity:&nbsp;&nbsp;</label><span> {{data?.main?.humidity}}%</span>
+                        </div>
+                    </div>
+                    <div class="float-end w-50 text-end">
+                        <div>
+                            <label>Wind:&nbsp;&nbsp;</label><span> {{data?.wind?.speed}} km/h</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </ng-container>
+    </div>
+</div>

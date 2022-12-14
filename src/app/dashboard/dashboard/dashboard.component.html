@@ -1,0 +1,42 @@
+<app-header (city)="oncityChange($event)" (location)="getLocation($any($event))"></app-header>
+
+<section class="container mt-4">
+    <div class="row">
+        <h1>Welcome to the weather channel</h1>
+    </div>
+    <div class="row">
+        <div class="col-lg-7 col-sm-12 mb-4 mt-2">
+            <ng-container *ngIf="!($currentWeatherData | async)">
+                Loading....
+            </ng-container>
+            <ng-container *ngIf="($currentWeatherData | async)">
+                <app-current-weather [data]="($currentWeatherData | async)"></app-current-weather>
+            </ng-container>
+        </div>
+        <div class="col-lg-5 col-sm-12 mb-4 mt-2">
+            <ng-container *ngIf="!($airQuality | async)">
+                Loading....
+            </ng-container>
+            <ng-container *ngIf="($airQuality | async)">
+                <app-air-quality [data]="($airQuality | async)"></app-air-quality>
+            </ng-container>
+        </div>
+    </div>
+    <div class="row">
+        <h2>3 hour forecast</h2>
+    </div>
+    <div class="row">
+        <ng-container *ngIf="!($weatherForecastData | async)?.list">
+            <div class="col-lg-3">
+                Loading....
+            </div>
+        </ng-container>
+        <ng-container *ngIf="($weatherForecastData | async)?.list">
+            <ng-container *ngFor="let item of ($weatherForecastData | async)?.list;let i = index">
+                <app-weather-forecast [city]="($weatherForecastData | async)?.city" [data]="item"
+                    class="{{ i == selectedIndex ? 'col-lg-3 col-sm-12 active' :'col-lg-1 col-sm-12'}}  mb-3"
+                    [index]="i" [selectedIndex]="selectedIndex" (click)="openDetailsBox(i)"></app-weather-forecast>
+            </ng-container>
+        </ng-container>
+    </div>
+</section>

@@ -1,0 +1,32 @@
+<div class="card">
+    <div class="card-body">
+        <h2 class="card-title">Air Quality</h2>
+        <!-- <p>{{data?.list[0]?.main.aqi}}</p> -->
+        <div class="card-description clearfix">
+            <div class="w-50 float-start chart-wrapper">
+                <p-chart type="pie" [data]="chartData" [options]="options" width="200" borderWidth="0"></p-chart>
+                <label class="quality-index-lable">{{data?.list[0]?.main.aqi}}</label>
+            </div>
+            <div class="w-50 float-start more">
+                <div class="border-bottom pb-2 pt-2 border-light">
+                    <label>Qualitative name</label><span class="float-end"> Index</span>
+                </div>
+                <div class="border-bottom pb-2 pt-2 border-light">
+                    <label>Good</label><span class="float-end"> 1</span>
+                </div>
+                <div class="border-bottom pb-2 pt-2 border-light">
+                    <label>Fair</label><span class="float-end"> 2</span>
+                </div>
+                <div class="border-bottom pb-2 pt-2 border-light">
+                    <label>Moderate</label><span class="float-end"> 3</span>
+                </div>
+                <div class="border-bottom pb-2 pt-2 border-light">
+                    <label>Poor</label><span class="float-end"> 4</span>
+                </div>
+                <div class="border-bottom pb-2 pt-2 border-light">
+                    <label>Very Poor</label><span class="float-end"> 5</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
