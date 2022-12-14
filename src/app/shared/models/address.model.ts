@@ -30,8 +30,8 @@ export interface Address {
   }
   
   export interface Location {
-    lat: number
-    lng: number
+    lat: any
+    lng: any
   }
   
   export interface Viewport {

@@ -1,5 +1,5 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
-import { Location } from '../../models/address.model';
+import { Address, Location } from '../../models/address.model';
 
 @Component({
   selector: 'app-places-search',
@@ -28,4 +28,5 @@ export class PlacesSearchComponent implements OnInit {
     }
     
   }
+
 }
