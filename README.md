@@ -1,6 +1,29 @@
-# WeatherApp
+## Installation instruction
+1.	Prerequisite: Angular CLI: 15.0.3 or above, node js.
+2.	First clone the project above GitHub location.
+3.	Then run the => npm install command (If this is not working please try with npm install --force).
+4.	After installation complete run the => run npm start and local server will be started with http://localhost:4200/ URL.
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.3.4.
+## Architecture
+    src
+      |---- app
+      |	| ----- dashboard
+      |	| ----- shared
+      |		|----- components
+      |	|----- models
+      |		|----- services
+      |----- styles
+
+1.	Dashboard module: This is a lazy loading module where landed page of the application.
+2.	 Shared module: This is also lazy loading module, but this will be shared for all other modules.
+    i.	Components: under this folder all shared components are developed reusable manner.
+	ii.	models: All interfaces are included in this folder.
+	iii.	Services: All shared services are included in this folder.
+3.	Styles: All common SCSS files are included in this folder with the reusable manner.
+
+# WeatherForecast
+
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.0.3.
 
 ## Development server
 
@@ -25,3 +48,4 @@ Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To u
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+
