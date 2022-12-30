@@ -1,7 +1,7 @@
 @import 'abstracts/variables';
 
 .card {
-    background-color: $secondary;
+    background-color: $color-brand-secondary;
     border-radius: 1.5rem;
     min-height: 270px;
 
@@ -21,17 +21,17 @@
     }
 
     .border-bottom {
-        border-color: $light-gray !important;
+        border-color: $color-border-primary !important;
     }
 
     .more {
-        color: $dark-gray;
+        color: $color-text-tertiary;
     }
     .chart-wrapper{
         position: relative;
         .quality-index-lable {
-            color: $bg-color;
-            background: $tertiary;
+            color: $color-brand-primary;
+            background: $color-brand-tertiary;
             border-radius: 50%;
             width: 4rem;
             height: 4rem;

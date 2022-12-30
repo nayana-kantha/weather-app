@@ -1,7 +1,7 @@
 @import 'abstracts/variables';
 
 .card{
-    background-color: $secondary;
+    background-color: $color-brand-secondary;
     border-radius: 1.5rem;
     .card-title{
         font-size: 1.2rem;
@@ -16,10 +16,10 @@
         }
     }
     .border-bottom{
-        border-color: $light-gray !important;
+        border-color: $color-border-primary !important;
     }
     .more{
-        color: $dark-gray;
+        color: $color-text-tertiary;
     }
     .img-wrapper{
         position: relative;

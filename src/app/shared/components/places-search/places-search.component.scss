@@ -4,11 +4,11 @@
 .place-wrapper{
     position: relative;
     .place-search{
-        @include border-box($secondary,none,0,none,1.5rem);
+        @include border-box($color-brand-secondary,none,0,none,1.5rem);
         margin-left: 10px;
         width: 100%;
         padding: 0.5rem 0.5rem 0.5rem 2rem;
-        color: $primary;
+        color: $color-text-primary;
     }
     .bi-search{
         position: absolute;
